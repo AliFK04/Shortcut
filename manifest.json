@@ -1,0 +1,29 @@
+{
+   "name": "ShortCuts",
+   "description":"Allows users to create their own tab shortcuts",
+   "version": "1.0",
+   "manifest_version": 3,
+   "background": {
+     "service_worker": "background.js"
+   },
+   "commands": {
+     "my-keybind": {
+       "suggested_key": {
+         "default": "Ctrl+Shift+K"
+       },
+       "description": "My keybind description"
+     }
+   },
+   "permissions": ["tabs", "activeTab", "storage"],
+   "action": {
+     "default_popup": "popup.html"
+   },
+   "content_scripts": [{
+      "matches": [
+            "<all_urls>"
+      ],
+      "js": ["popup.js"]
+  }]
+ }
+ 
+ 
